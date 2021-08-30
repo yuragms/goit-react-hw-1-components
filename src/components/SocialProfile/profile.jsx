@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import defaultImage from "./default.jpg";
+import { Card, Description, Avatar, StatsList } from "./profile.styled.jsx";
 
 function SocialProfile({
   name = "неизвестено",
@@ -13,15 +14,15 @@ function SocialProfile({
   },
 }) {
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt={name} class="avatar" />
+    <Card>
+      <Description>
+        <Avatar src={avatar} alt={name} />
         <p class="name">{name}</p>
         <p class="tag">{tag}</p>
         <p class="location">{location}</p>
-      </div>
+      </Description>
 
-      <ul class="stats">
+      <StatsList>
         <li>
           <span class="label">Followers</span>
           <span class="quantity">{followers}</span>
@@ -34,8 +35,8 @@ function SocialProfile({
           <span class="label">Likes</span>
           <span class="quantity">{likes}</span>
         </li>
-      </ul>
-    </div>
+      </StatsList>
+    </Card>
   );
 }
 

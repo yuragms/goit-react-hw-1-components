@@ -1,11 +1,10 @@
-import "./App.css";
-import SocialProfile from "./SocialProfile/profile";
+import SocialProfile from "./SocialProfile/profile.jsx";
 import user from "./SocialProfile/user.json";
+import { HighestContainer } from "./container/container.jsx";
 
 function App() {
   return (
-    <div className="App">
-      Hello world
+    <HighestContainer>
       <SocialProfile
         name={user.name}
         tag={user.tag}
@@ -13,7 +12,7 @@ function App() {
         avatar={user.avatar}
         stats={user.stats}
       />
-    </div>
+    </HighestContainer>
   );
 }
 
