@@ -1,6 +1,6 @@
 import "./App.css";
-import SocialProfile from "./components/SocialProfile/profile";
-import user from "./user.json";
+import SocialProfile from "./SocialProfile/profile";
+import user from "./SocialProfile/user.json";
 
 function App() {
   return (
