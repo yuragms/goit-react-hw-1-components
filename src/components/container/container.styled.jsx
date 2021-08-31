@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
   align-items: start;
   gap: 30px;
   min-height: 100vh;

@@ -1,37 +1,42 @@
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
+import {
+  Section,
+  StatisticsList,
+  StatisticsTitle,
+  Item,
+  Label,
+  Percentage,
+} from "./Statistics.styled.jsx";
 
-// import { Card, } from "./Statistics.styled.jsx";
-
-function Statistics(title, stats) {
+function Statistics({ title, stats }) {
+  console.log(stats);
   return (
-    <section class="statistics">
-      <h2 class="title">{title}</h2>
+    <Section>
+      <StatisticsTitle>{title}</StatisticsTitle>
 
-      <ul class="stat-list">
+      <StatisticsList>
         {stats.map((item) => {
           return (
-            <li key={item.id}>
-              <span class="label">{item.label}</span>
-              <span class="percentage">{item.percentage}%</span>
-            </li>
+            <Item key={item.id}>
+              <Label>{item.label}</Label>
+              <Percentage>{item.percentage}%</Percentage>
+            </Item>
           );
         })}
-      </ul>
-    </section>
+      </StatisticsList>
+    </Section>
   );
 }
 
-// SocialProfile.propTypes = {
-//   name: PropTypes.string.isRequired,
-//   tag: PropTypes.string.isRequired,
-//   location: PropTypes.string.isRequired,
-//   avatar: PropTypes.string.isRequired,
-
-//   stats: PropTypes.shape({
-//     followers: PropTypes.number.isRequired,
-//     views: PropTypes.number.isRequired,
-//     likes: PropTypes.number.isRequired,
-//   }),
-// };
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ),
+};
 
 export default Statistics;
